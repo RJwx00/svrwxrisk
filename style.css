@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     background-color: #e0f2f1;
     transition: background-color 0.5s ease;
-    flex-direction: row; /* Arrange disclaimer and main UI horizontally */
+    flex-direction: row; /* Arrange disclaimer and calculator horizontally */
 }
 
 .container {
@@ -15,22 +15,23 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 1200px; /* Increased max-width to accommodate both UIs */
+    width: 95%; /* Increased width to accommodate both sections */
+    max-width: 1400px; /* Further increased max-width */
     display: flex;
-    flex-direction: row; /* Arrange sections horizontally */
-    align-items: flex-start; /* Align sections to the top */
-    justify-content: space-between; /* Space them out */
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 #disclaimer-container {
     width: 30%; /* Adjust as needed */
     padding: 10px;
-    border-right: 1px solid #ddd; /* Add a separator line */
-    margin-right: 20px; /* Add spacing between sections */
+    border-right: 1px solid #ddd;
+    margin-right: 20px;
+    text-align: left; /* Align disclaimer text to the left */
 }
 
-#main-ui-container {
+#calculator-ui-container {
     width: 65%; /* Adjust as needed */
     display: flex;
     flex-direction: column;
@@ -48,10 +49,6 @@ h2 {
     margin-top: 20px;
 }
 
-h3 {
-    color: #555;
-    margin-top: 20px;
-}
 .form-group {
     margin-bottom: 15px;
     width: 100%;
