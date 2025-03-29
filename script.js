@@ -86,7 +86,7 @@ calculateButton.addEventListener('click', () => {
         initMap(lat, lon);
         // Add marker and circle
         marker = L.marker([lat, lon]).addTo(map).bindPopup(`Severe Weather Risk: ${risk}`).openPopup();
-        circle = L.circle([lat, lon], { radius: 64373.76, color: riskColor, fillOpacity: 0.2 }).addTo(map); // 40 miles in meters (approx)
+        circle = L.circle([lat, lon], { radius: 64373.76, color: riskColor, fillOpacity: 0.2 }).addTo(map);
     } else if (map && !isNaN(lat) && !isNaN(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) {
         map.setView([lat, lon], 7);
         if (marker) {
@@ -96,7 +96,7 @@ calculateButton.addEventListener('click', () => {
             map.removeLayer(circle);
         }
         marker = L.marker([lat, lon]).addTo(map).bindPopup(`Severe Weather Risk: ${risk}`).openPopup();
-        circle = L.circle([lat, lon], { radius: 64373.76, color: riskColor, fillOpacity: 0.2 }).addTo(map); // 40 miles in meters (approx)
+        circle = L.circle([lat, lon], { radius: 64373.76, color: riskColor, fillOpacity: 0.2 }).addTo(map);
     } else if (map) {
         map.remove(); // Remove map if lat/lon is cleared
         map = null;
