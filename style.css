@@ -1,13 +1,13 @@
 body {
     font-family: sans-serif;
     margin: 0;
+    padding: 0; /* Add this to reset any potential body padding/margin */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #e0f2f1;
     transition: background-color 0.5s ease;
-    flex-direction: row;
 }
 
 .container {
@@ -20,17 +20,23 @@ body {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-start; /* Changed from space-between to flex-start */
+    justify-content: flex-start;
+    box-sizing: border-box; /* Crucial: Include padding in width */
+    margin: 0; /* Add this to reset any potential container margin */
+    padding: 0; /* Add this to reset any potential container padding */
 }
 
 #disclaimer-container {
     width: 30%;
+    max-width: 400px;
     padding: 10px;
     border-right: 1px solid #ddd;
     margin-right: 20px;
     text-align: left;
-    flex: 1; /* Allow it to grow */
-    max-width: 400px; /* Limit its max-width */
+    flex: 1 1 auto; /* Allow grow, shrink, and initial size */
+    box-sizing: border-box; /* Crucial: Include padding in width */
+    margin: 0; /* Add this to reset any potential container margin */
+    padding: 0; /* Add this to reset any potential container padding */
 }
 
 #calculator-ui-container {
@@ -38,29 +44,42 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 2; /* Allow it to grow more */
+    flex: 2 1 auto; /* Allow grow, but don't shrink as much */
+    box-sizing: border-box; /* Crucial: Include padding in width */
+    margin: 0; /* Add this to reset any potential container margin */
+    padding: 0; /* Add this to reset any potential container padding */
 }
 
 h1 {
     text-align: center;
     color: #333;
     width: 100%;
+    margin: 0; /* Add this to reset any potential heading margin */
+    padding: 0; /* Add this to reset any potential heading padding */
 }
 
 h2 {
     color: #555;
     margin-top: 20px;
+    margin-bottom: 10px; /* Add a little margin below headings */
+    margin-left: 0; /* Reset left margin */
+    margin-right: 0; /* Reset right margin */
+    padding: 0; /* Reset padding */
 }
 
 .form-group {
     margin-bottom: 15px;
     width: 100%;
+    margin: 0; /* Add this to reset any potential form-group margin */
+    padding: 0; /* Add this to reset any potential form-group padding */
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     color: #555;
+    margin: 0; /* Add this to reset any potential label margin */
+    padding: 0; /* Add this to reset any potential label padding */
 }
 
 input {
@@ -68,7 +87,9 @@ input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Crucial: Include padding in width */
+    margin: 0; /* Add this to reset any potential input margin */
+    padding: 0; /* Add this to reset any potential input padding */
 }
 
 button {
@@ -79,6 +100,8 @@ button {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    margin: 0; /* Add this to reset any potential button margin */
+    padding: 0; /* Add this to reset any potential button padding */
 }
 
 button:hover {
@@ -96,6 +119,7 @@ button:hover {
     color: #333;
     transition: color 0.5s ease, text-shadow 0.5s ease;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 20px; /* Add bottom margin for spacing */
 }
 
 #location-input-container {
@@ -104,14 +128,20 @@ button:hover {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
+    margin: 0; /* Add this to reset any potential container margin */
+    padding: 0; /* Add this to reset any potential container padding */
 }
 
 #location-input-container label {
     margin-bottom: 5px;
+    margin: 0; /* Add this to reset any potential label margin */
+    padding: 0; /* Add this to reset any potential label padding */
 }
 
 #location-input-container input {
     margin-bottom: 10px;
+    margin: 0; /* Add this to reset any potential input margin */
+    padding: 0; /* Add this to reset any potential input padding */
 }
 
 #weather-data-input-container {
@@ -120,21 +150,26 @@ button:hover {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
+    margin: 0; /* Add this to reset any potential container margin */
+    padding: 0; /* Add this to reset any potential container padding */
 }
 
 #weather-data-input-container label {
     margin-bottom: 5px;
+    margin: 0; /* Add this to reset any potential label margin */
+    padding: 0; /* Add this to reset any potential label padding */
 }
 
 #weather-data-input-container input {
     margin-bottom: 10px;
+    margin: 0; /* Add this to reset any potential input margin */
+    padding: 0; /* Add this to reset any potential input padding */
 }
 
 #map {
     height: 300px;
     width: 100%;
     margin-top: 20px;
-}
-    width: 100%;
-    margin-top: 20px;
+    margin: 0; /* Add this to reset any potential map margin */
+    padding: 0; /* Add this to reset any potential map padding */
 }
