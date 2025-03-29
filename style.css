@@ -7,7 +7,7 @@ body {
     min-height: 100vh;
     background-color: #e0f2f1;
     transition: background-color 0.5s ease;
-    flex-direction: row; /* Arrange disclaimer and calculator horizontally */
+    flex-direction: row;
 }
 
 .container {
@@ -15,27 +15,30 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 95%; /* Increased width to accommodate both sections */
-    max-width: 1400px; /* Further increased max-width */
+    width: 95%;
+    max-width: 1400px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start; /* Changed from space-between to flex-start */
 }
 
 #disclaimer-container {
-    width: 30%; /* Adjust as needed */
+    width: 30%;
     padding: 10px;
     border-right: 1px solid #ddd;
     margin-right: 20px;
-    text-align: left; /* Align disclaimer text to the left */
+    text-align: left;
+    flex: 1; /* Allow it to grow */
+    max-width: 400px; /* Limit its max-width */
 }
 
 #calculator-ui-container {
-    width: 65%; /* Adjust as needed */
+    width: 65%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    flex: 2; /* Allow it to grow more */
 }
 
 h1 {
@@ -129,6 +132,9 @@ button:hover {
 
 #map {
     height: 300px;
+    width: 100%;
+    margin-top: 20px;
+}
     width: 100%;
     margin-top: 20px;
 }
