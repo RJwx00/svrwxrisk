@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Severe Weather Risk Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Severe Weather Risk Calculator</h1>
+
+        <div id="location-input-container">
+            <h2>Input Lat/Long Here:</h2>
+            <div class="form-group">
+                <label for="latInput">Latitude:</label>
+                <input type="number" id="latInput" name="lat" placeholder="Optional">
+            </div>
+
+            <div class="form-group">
+                <label for="lonInput">Longitude:</label>
+                <input type="number" id="lonInput" name="lon" placeholder="Optional">
+            </div>
+        </div>
+
+        <div id="weather-data-input-container">
+            <h2>Input Weather Data Here:</h2>
+            <div class="form-group">
+                <label for="capeInput">CAPE (J/kg):</label>
+                <input type="number" id="capeInput" name="cape" placeholder="Required" required>
+            </div>
+
+            <div class="form-group">
+                <label for="shearInput">Wind Shear (kts):</label>
+                <input type="number" id="shearInput" name="shear" placeholder="Required" required>
+            </div>
+
+            <div class="form-group">
+                <label for="helicityInput">Helicity (m²/s²):</label>
+                <input type="number" id="helicityInput" name="helicity" placeholder="Required" required>
+            </div>
+
+            <div class="form-group">
+                <label for="humidityInput">Relative Humidity (%):</label>
+                <input type="number" id="humidityInput" name="humidity" placeholder="Required" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dewpointInput">Dew Point (°C):</label>
+                <input type="number" id="dewpointInput" name="dewpoint" placeholder="Required" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dcapeInput">DCAPE (J/kg):</label>
+                <input type="number" id="dcapeInput" name="dcape" placeholder="Required" required>
+            </div>
+        </div>
+
+        <button id="calculateButton">Calculate Risk</button>
+
+        <div id="results">
+            </div>
+
+        <div id="map"></div> </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
