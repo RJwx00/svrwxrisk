@@ -27,7 +27,7 @@ body {
 
 #disclaimer-container {
     width: 30%;
-    max-width: 400px;
+    max-width: 350px; /* Adjusted max-width */
     padding: 10px;
     border-right: 1px solid #ddd;
     margin-right: 20px;
@@ -40,9 +40,10 @@ body {
     width: 65%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch; /* Changed to stretch */
     flex: 2 1 auto;
     box-sizing: border-box;
+    padding-left: 20px; /* Added left padding */
 }
 
 h1 {
@@ -51,7 +52,7 @@ h1 {
     width: 100%;
     margin: 0;
     padding: 0;
-    margin-bottom: 20px; /* Add spacing below the main heading */
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -69,7 +70,7 @@ label {
     display: block;
     margin-bottom: 5px;
     color: #555;
-    font-size: 0.9em; /* Slightly smaller label font */
+    font-size: 0.9em;
 }
 
 input {
@@ -78,7 +79,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-bottom: 8px; /* Slightly less spacing below inputs */
+    margin-bottom: 8px;
 }
 
 button {
@@ -89,7 +90,8 @@ button {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    font-size: 1.1em; /* Slightly larger button font */
+    font-size: 1.1em;
+    margin-top: 10px; /* Added top margin */
 }
 
 button:hover {
@@ -107,7 +109,7 @@ button:hover {
     color: #333;
     transition: color 0.5s ease, text-shadow 0.5s ease;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    margin-bottom: 20px; /* Add bottom margin for spacing */
+    margin-bottom: 20px;
 }
 
 #location-input-container {
@@ -119,15 +121,16 @@ button:hover {
 }
 
 #location-input-container h2 {
-    font-size: 1.2em; /* Slightly larger section headings */
+    font-size: 1.2em;
+    margin-bottom: 5px; /* Added bottom margin */
 }
 
 #location-input-container label {
-    margin-bottom: 2px; /* Less spacing below location labels */
+    margin-bottom: 2px;
 }
 
 #location-input-container input {
-    margin-bottom: 5px; /* Less spacing below location inputs */
+    margin-bottom: 5px;
 }
 
 #weather-data-input-container {
@@ -139,15 +142,16 @@ button:hover {
 }
 
 #weather-data-input-container h2 {
-    font-size: 1.2em; /* Slightly larger section headings */
+    font-size: 1.2em;
+    margin-bottom: 5px; /* Added bottom margin */
 }
 
 #weather-data-input-container label {
-    margin-bottom: 2px; /* Less spacing below weather labels */
+    margin-bottom: 2px;
 }
 
 #weather-data-input-container input {
-    margin-bottom: 5px; /* Less spacing below weather inputs */
+    margin-bottom: 5px;
 }
 
 #map {
