@@ -6,76 +6,87 @@
     <title>Severe Weather Risk Calculator - RJwx</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
-    <div id="calculator-container">
-        <div class="container" id="calculator-content">
-            <div id="disclaimer-container">
-                <h2>Important Disclaimers</h2>
-                <p>This calculator provides an *estimate* of severe weather risk based on mathematical
-                    equations. It is not a substitute for official weather forecasts and warnings.</p>
-                <p>Data used in this calculator may contain inaccuracies. Always consult multiple
-                    sources for weather information.</p>
-            </div>
+    <!-- Maintenance page -->
+    <div id="maintenance-content" style="display:none; flex-direction: column; justify-content:center; align-items:center; width:100%; height:100vh; text-align:center;">
+        <h1>🚧 Updating. Please be patient with us. 🚧</h1>
+        <p>We are performing maintenance. The calculator will be back shortly.</p>
+    </div>
 
-            <div id="calculator-ui-container">
-                <h1>Severe Weather Risk Calculator - RJwx</h1>
-
-                <div id="location-input-container">
-                    <h2>Location (Optional):</h2>
-                    <div class="form-group">
-                        <label for="latInput">Latitude:</label>
-                        <input type="number" id="latInput" name="lat" placeholder="Optional">
-                    </div>
-                    <div class="form-group">
-                        <label for="lonInput">Longitude:</label>
-                        <input type="number" id="lonInput" name="lon" placeholder="Optional">
-                    </div>
-                </div>
-
-                <div id="weather-data-input-container">
-                    <h2>Input Weather Data Here:</h2>
-                    <div class="form-group">
-                        <label for="capeInput">CAPE (J/kg):</label>
-                        <input type="number" id="capeInput" name="cape" placeholder="Required" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="shearInput">Wind Shear (kts):</label>
-                        <input type="number" id="shearInput" name="shear" placeholder="Required" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="helicityInput">Helicity (m²/s²):</label>
-                        <input type="number" id="helicityInput" name="helicity" placeholder="Required" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="humidityInput">Relative Humidity (%):</label>
-                        <input type="number" id="humidityInput" name="humidity" placeholder="Required" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dewpointInput">Dew Point (°C):</label>
-                        <input type="number" id="dewpointInput" name="dewpoint" placeholder="Required" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dcapeInput">DCAPE (J/kg):</label>
-                        <input type="number" id="dcapeInput" name="dcape" placeholder="Required" required>
-                    </div>
-                </div>
-
-                <button id="calculateButton">Calculate Risk</button>
-                <div id="results"></div>
-                <div id="map"></div>
-            </div>
+    <!-- Calculator content -->
+    <div id="calculator-content" class="container">
+        <div id="disclaimer-container">
+            <h2>Important Disclaimers</h2>
+            <p>This calculator provides an *estimate* of severe weather risk based on mathematical
+                equations. It is not a substitute for official weather forecasts and warnings.</p>
+            <p>Data used in this calculator may contain inaccuracies. Always consult multiple
+                sources for weather information.</p>
+            <p>Use this tool at your own risk. The creators are not responsible for any decisions
+                made based on its output.</p>
+            <p>Tornado formation is a complex process, and this calculator cannot predict
+                tornadoes with certainty.</p>
+            <p>Please exercise caution and prioritize your safety during severe weather events.</p>
+            <p>It is *recommended* that you use HRRR or other short-range models for data input,
+                as long range models (such as GFS) can have increased inaccuracies.</p>
+            <p><b>Important Data Input Process **READ**</b></p>
+            <p>For CAPE: Use Surface CAPE</p>
+            <p>For Wind Shear: Use Bulk Shear: 0-6 km AGL</p>
+            <p>For Helicity: Use SRH: Use 0-3 km AGL</p>
+            <p>For Relative Humidity: Use 2m AGL RH</p>
+            <p>For Dew Point: Use 2m AGL Dew Point</p>
+            <p>For DCAPE: Use DCAPE</p>
         </div>
 
-        <!-- Maintenance Page -->
-        <div id="maintenance-content" style="display:none;" class="maintenance">
-            <h1>Updating...</h1>
-            <p>The Severe Weather Risk Calculator is temporarily offline.</p>
-            <p>Please be patient. We'll be back shortly!</p>
+        <div id="calculator-ui-container">
+            <h1>Severe Weather Risk Calculator - RJwx</h1>
+            <div id="location-input-container">
+                <h2>Location (Optional):</h2>
+                <div class="form-group">
+                    <label for="latInput">Latitude:</label>
+                    <input type="number" id="latInput" name="lat" placeholder="Optional">
+                </div>
+                <div class="form-group">
+                    <label for="lonInput">Longitude:</label>
+                    <input type="number" id="lonInput" name="lon" placeholder="Optional">
+                </div>
+            </div>
+
+            <div id="weather-data-input-container">
+                <h2>Input Weather Data Here:</h2>
+                <div class="form-group">
+                    <label for="capeInput">CAPE (J/kg):</label>
+                    <input type="number" id="capeInput" name="cape" placeholder="Required" required>
+                </div>
+                <div class="form-group">
+                    <label for="shearInput">Wind Shear (kts):</label>
+                    <input type="number" id="shearInput" name="shear" placeholder="Required" required>
+                </div>
+                <div class="form-group">
+                    <label for="helicityInput">Helicity (m²/s²):</label>
+                    <input type="number" id="helicityInput" name="helicity" placeholder="Required" required>
+                </div>
+                <div class="form-group">
+                    <label for="humidityInput">Relative Humidity (%):</label>
+                    <input type="number" id="humidityInput" name="humidity" placeholder="Required" required>
+                </div>
+                <div class="form-group">
+                    <label for="dewpointInput">Dew Point (°C):</label>
+                    <input type="number" id="dewpointInput" name="dewpoint" placeholder="Required" required>
+                </div>
+                <div class="form-group">
+                    <label for="dcapeInput">DCAPE (J/kg):</label>
+                    <input type="number" id="dcapeInput" name="dcape" placeholder="Required" required>
+                </div>
+            </div>
+
+            <button id="calculateButton">Calculate Risk</button>
+            <div id="results"></div>
+            <div id="map"></div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
