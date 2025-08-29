@@ -1,7 +1,7 @@
 // =========================
 // Maintenance Mode Switch
 // =========================
-const MAINTENANCE_MODE = false; // <-- set to true to enable maintenance mode
+const MAINTENANCE_MODE = true; // <-- set to true to enable maintenance mode
 
 if (MAINTENANCE_MODE) {
     document.getElementById("calculator-content").style.display = "none";
@@ -97,3 +97,4 @@ calculateButton.addEventListener('click', () => {
         map.remove(); map = null; marker = null; circle = null; mapDiv.style.display = "none";
     }
 });
+
