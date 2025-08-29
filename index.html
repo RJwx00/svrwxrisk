@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
-    <div id="app-container">
-        <!-- Calculator content -->
+    <div id="calculator-container">
         <div class="container" id="calculator-content">
             <div id="disclaimer-container">
                 <h2>Important Disclaimers</h2>
-                <p>This calculator provides an *estimate* of severe weather risk based on mathematical equations. It is not a substitute for official weather forecasts and warnings.</p>
-                <p>Data used in this calculator may contain inaccuracies. Always consult multiple sources for weather information.</p>
+                <p>This calculator provides an *estimate* of severe weather risk based on mathematical
+                    equations. It is not a substitute for official weather forecasts and warnings.</p>
+                <p>Data used in this calculator may contain inaccuracies. Always consult multiple
+                    sources for weather information.</p>
             </div>
 
             <div id="calculator-ui-container">
@@ -36,27 +37,27 @@
                     <h2>Input Weather Data Here:</h2>
                     <div class="form-group">
                         <label for="capeInput">CAPE (J/kg):</label>
-                        <input type="number" id="capeInput" placeholder="Required">
+                        <input type="number" id="capeInput" name="cape" placeholder="Required" required>
                     </div>
                     <div class="form-group">
                         <label for="shearInput">Wind Shear (kts):</label>
-                        <input type="number" id="shearInput" placeholder="Required">
+                        <input type="number" id="shearInput" name="shear" placeholder="Required" required>
                     </div>
                     <div class="form-group">
                         <label for="helicityInput">Helicity (m²/s²):</label>
-                        <input type="number" id="helicityInput" placeholder="Required">
+                        <input type="number" id="helicityInput" name="helicity" placeholder="Required" required>
                     </div>
                     <div class="form-group">
                         <label for="humidityInput">Relative Humidity (%):</label>
-                        <input type="number" id="humidityInput" placeholder="Required">
+                        <input type="number" id="humidityInput" name="humidity" placeholder="Required" required>
                     </div>
                     <div class="form-group">
                         <label for="dewpointInput">Dew Point (°C):</label>
-                        <input type="number" id="dewpointInput" placeholder="Required">
+                        <input type="number" id="dewpointInput" name="dewpoint" placeholder="Required" required>
                     </div>
                     <div class="form-group">
                         <label for="dcapeInput">DCAPE (J/kg):</label>
-                        <input type="number" id="dcapeInput" placeholder="Required">
+                        <input type="number" id="dcapeInput" name="dcape" placeholder="Required" required>
                     </div>
                 </div>
 
@@ -66,8 +67,8 @@
             </div>
         </div>
 
-        <!-- Maintenance content -->
-        <div class="maintenance" id="maintenance-content" style="display:none;">
+        <!-- Maintenance Page -->
+        <div id="maintenance-content" style="display:none;" class="maintenance">
             <h1>Updating...</h1>
             <p>The Severe Weather Risk Calculator is temporarily offline.</p>
             <p>Please be patient. We'll be back shortly!</p>
