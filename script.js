@@ -1,7 +1,7 @@
 // =========================
 // Maintenance Mode Switch
 // =========================
-const MAINTENANCE_MODE = true; // <-- set to true to enable maintenance mode
+const MAINTENANCE_MODE = false; // <-- set to true to enable maintenance mode
 
 if (MAINTENANCE_MODE) {
     document.getElementById("calculator-content").style.display = "none";
@@ -12,7 +12,7 @@ if (MAINTENANCE_MODE) {
 }
 
 // =========================
-// Calculator Logic
+// Original Calculator Logic
 // =========================
 const capeInput = document.getElementById('capeInput');
 const shearInput = document.getElementById('shearInput');
@@ -30,10 +30,10 @@ const mapDiv = document.getElementById('map');
 let map, marker, circle;
 
 function initMap(lat, lon) {
-    if (!isNaN(lat) && !isNaN(lon)) {
+    if (!isNaN(lat) && !isNaN(lon) && lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) {
         map = L.map('map').setView([lat, lon], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
     } else {
         mapDiv.style.display = "none";
@@ -41,7 +41,7 @@ function initMap(lat, lon) {
 }
 
 calculateButton.addEventListener('click', () => {
-    if (MAINTENANCE_MODE) return; // Prevent calculation in maintenance mode
+    if (MAINTENANCE_MODE) return; // Prevent calculations
 
     const cape = parseFloat(capeInput.value);
     const shear = parseFloat(shearInput.value);
@@ -81,7 +81,7 @@ calculateButton.addEventListener('click', () => {
 
     resultsDiv.textContent = resultText;
     resultsDiv.style.color = riskColor;
-    resultsDiv.style.textShadow = `-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000`;
+    resultsDiv.style.textShadow = `-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000`;
 
     if (!map && !isNaN(lat) && !isNaN(lon)) {
         initMap(lat, lon);
@@ -97,4 +97,3 @@ calculateButton.addEventListener('click', () => {
         map.remove(); map = null; marker = null; circle = null; mapDiv.style.display = "none";
     }
 });
-
