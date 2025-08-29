@@ -47,23 +47,23 @@ calculateButton.addEventListener('click', () => {
     let riskColor = "#333";
     let textShadowColor = "#000";
 
-    if (cape > 2500 && shear > 45 && helicity > 125 && humidity > 65 && dewpoint > 13 && dcapeValue > 800) {
+    if (cape > 3000 && shear > 50 && helicity > 150 && humidity > 70 && dewpoint > 15 && dcapeValue > 900) {
         risk = "HIGH";
         riskColor = "pink";
         body.style.backgroundColor = "#ffcdd2";
-    } else if (cape > 1500 && shear > 30 && helicity > 75 && humidity > 55 && dewpoint > 11 && dcapeValue > 600) {
+    } else if (cape > 2000 && shear > 35 && helicity > 100 && humidity > 60 && dewpoint > 13 && dcapeValue > 700) {
         risk = "MDT";
         riskColor = "red";
         body.style.backgroundColor = "#ef9a9a";
-    } else if (cape > 1000 && shear > 20 && helicity > 50 && humidity > 45 && dewpoint > 9 && dcapeValue > 450) {
+    } else if (cape > 1300 && shear > 25 && helicity > 70 && humidity > 50 && dewpoint > 11 && dcapeValue > 500) {
         risk = "ENH";
         riskColor = "orange";
         body.style.backgroundColor = "#ffcc80";
-    } else if (cape > 500 && shear > 10 && helicity > 25 && humidity > 35 && dewpoint > 7 && dcapeValue > 300) {
+    } else if (cape > 700 && shear > 15 && helicity > 40 && humidity > 40 && dewpoint > 9 && dcapeValue > 350) {
         risk = "SLGT";
         riskColor = "yellow";
         body.style.backgroundColor = "#fff59d";
-    } else if (cape > 200 && shear > 5 && helicity > 10 && humidity > 25 && dewpoint > 4 && dcapeValue > 150) {
+    } else if (cape > 300 && shear > 8 && helicity > 20 && humidity > 30 && dewpoint > 6 && dcapeValue > 200) {
         risk = "MRGL";
         riskColor = "green";
         body.style.backgroundColor = "#a5d6a7";
